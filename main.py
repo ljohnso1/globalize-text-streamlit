@@ -98,6 +98,14 @@ email_input = get_text()
 st.markdown("### Your Converted Email:")    
 
 
+def get_api_key():
+    input_text = st.text_input(label="OpenAI API Key ",  placeholder="Ex: sk-2twmA8tfCb8un4...", key="openai_api_key")
+    return input_text
+
+openai_api_key = get_api_key()
+
+
+
 if email_input:
     if not openai_api_key:
         st.warning('Please insert OpenAI API Key. Instructions [here](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key)', icon="⚠️")
